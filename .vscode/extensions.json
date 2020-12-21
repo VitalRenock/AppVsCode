@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "adrianwilczynski.asp-net-core-snippet-pack",
+        "equinusocio.vsc-material-theme",
+        "equinusocio.vsc-community-material-theme",
+        "equinusocio.vsc-material-theme-icons",
+        "alexcvzz.vscode-sqlite",
+        "vscode-icons-team.vscode-icons"
+    ]
+}

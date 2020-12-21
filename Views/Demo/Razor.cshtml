@@ -1,0 +1,153 @@
+@model Post
+@{
+    ViewData["Title"] = "Razor";
+}
+
+<h3>ViewBag et ViewData</h3>
+<div class="container myContainer">
+
+    @* Attention, ViewBag et ViewData représente le même sac de données!
+        Donc pour exemple: 'ViewBag.MaData' et 'ViewData["MaData"]' auront la même valeur (celle déclarée en dernier) *@
+    @* Type dynamique *@
+    @ViewBag.Messag
+    <br>
+    @* Type Dictionnaire *@
+    @ViewData["Message"]
+
+</div>
+<br><hr><br>
+
+<h3>Les boucles</h3>
+<div class="container myContainer">
+
+    <ul>
+    @for (int i = 0; i < ViewData.Count; i++)
+    {
+        <li>@ViewData.ElementAt(i).Value</li>
+    }
+    <hr>
+    @foreach (var item in ViewData)
+    {
+        <li>@item.Value</li>
+    }
+    </ul>
+
+</div>
+<br><hr><br>
+
+<h3>Condition If/Else</h3>
+<div class="container myContainer">
+
+    @if (true) {
+        <p>Votre compte est activé</p>
+    }
+    else {
+        <p>Votre compte est désactivé</p>
+    }
+
+</div>
+<br><hr><br>
+
+<h3>RenderBody et RenderSection</h3>
+<div class="container myContainer">
+
+    @* @RenderBody()
+    @RenderSection("", false) *@
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
+<br><hr><br>
+
+<h3>Titre</h3>
+<div class="container myContainer">
+
+
+
+</div>
