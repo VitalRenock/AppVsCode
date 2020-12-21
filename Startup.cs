@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 using AppVsCode.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,10 +25,8 @@ namespace AppVsCode
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // 2) La méthode Configuration.GetConnectionString("SqliteConnectionString") va permettre d’obtenir la chaîne de connexion dans le fichier de configuration appsettings.json.
             services.AddDbContext<Database>(options => 
-                    options.UseSqlite("Data Source=MyDatabase.db"));
-                    // options.UseSqlite(Configuration.GetConnectionString("Database")));
+                    options.UseSqlite(Configuration.GetConnectionString("SqliteConnectionString")));
 
             services.AddControllersWithViews();
         }

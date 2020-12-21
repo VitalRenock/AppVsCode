@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-// using AppVsCode.Data;
 using AppVsCode.Models;
 
 namespace AppVsCode.Controllers
@@ -13,7 +12,6 @@ namespace AppVsCode.Controllers
     public class DatabaseController : Controller
     {
         private readonly Database _context;
-
         public DatabaseController(Database context)
         {
             _context = context;
@@ -24,6 +22,10 @@ namespace AppVsCode.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
+            // Accepted tester pour récupérer les tables de la DB
+            // DbTransaction MyTransit = _context.Database.ExecuteSqlRaw("MA REQUETE SQL");
+            // _context.Database.UseTransaction(MyTransit);
+
             return View(await _context.Posts.ToListAsync());
         }
 
