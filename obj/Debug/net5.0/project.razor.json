@@ -15618,6 +15618,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\renau\\Documents\\WebApp Projects\\AppVsCode\\AppVsCode\\Views\\Database\\Test.cshtml",
+      "TargetPath": "Views\\Database\\Test.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\renau\\Documents\\WebApp Projects\\AppVsCode\\AppVsCode\\Views\\Database\\Details.cshtml",
       "TargetPath": "Views\\Database\\Details.cshtml",
       "FileKind": "mvc"

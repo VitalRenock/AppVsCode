@@ -22,7 +22,7 @@ namespace AppVsCode.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            // Accepted tester pour récupérer les tables de la DB
+            // Tester pour récupérer les tables de la DB
             // DbTransaction MyTransit = _context.Database.ExecuteSqlRaw("MA REQUETE SQL");
             // _context.Database.UseTransaction(MyTransit);
 
@@ -175,5 +175,38 @@ namespace AppVsCode.Controllers
 
         #endregion
     
+        #region Test
+
+        public IActionResult Test()
+        {
+            var command = _context.Database.GetDbConnection().CreateCommand();
+            command.CommandText = "SELECT name from sqlite_master WHERE type='table'";
+            
+            _context.Database.OpenConnection();
+            using (var result = command.ExecuteReader()) 
+            {
+                while (result.Read())
+                    Console.WriteLine(result.GetString(0));
+            }
+            // var command = _context.Database.GetDbConnection().CreateCommand();
+            // command.CommandText = "SELECT name from sqlite_master WHERE type='table'";
+            // _context.Database.OpenConnection();
+            // using (var result = command.ExecuteReader()) 
+            // {
+            //     while (result.Read())
+            //         Console.WriteLine(result.GetString(0));
+            // }
+
+            
+            return View();
+        }
+
+        public string MaFonctionPartage()
+        {
+            return "Hello les gens!";
+        }
+
+        #endregion
+
     }
 }
