@@ -73,3 +73,5 @@ C:\Users\renau\Documents\WebApp Projects\AppVsCode\AppVsCode\obj\Debug\net5.0\Ra
 C:\Users\renau\Documents\WebApp Projects\AppVsCode\AppVsCode\obj\Debug\net5.0\Razor\Views\Database\Details.cshtml.g.cs
 C:\Users\renau\Documents\WebApp Projects\AppVsCode\AppVsCode\obj\Debug\net5.0\Razor\Views\Database\Edit.cshtml.g.cs
 C:\Users\renau\Documents\WebApp Projects\AppVsCode\AppVsCode\obj\Debug\net5.0\Razor\Views\Database\Test.cshtml.g.cs
+C:\Users\renau\Documents\WebApp Projects\AppVsCode\AppVsCode\obj\Debug\net5.0\Razor\Views\Tools\Index.cshtml.g.cs
+C:\Users\renau\Documents\WebApp Projects\AppVsCode\AppVsCode\obj\Debug\net5.0\Razor\Views\Shared\_MyPartial.cshtml.g.cs

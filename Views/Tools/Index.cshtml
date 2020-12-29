@@ -1,0 +1,94 @@
+@model Post
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container myContainer">
+    <div class="row">
+        <div class="col-9">
+            <h3>@Model.Title</h3>
+        </div>
+        <div class="col-3">
+            <p>ID: @Model.Id</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <p>@Model.Content</p>
+        </div>
+        <div class="col-3">
+            <p>@Model.PostDate</p>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_MyPartial", new { id = 3 })
+@* @Html.Action("MemberProfile", "Member", new { id = 3 }) *@
+@* @Html.Partial("MyPartial", new ViewDataDictionary( { "id" 3 } ) ); *@
+@* @Html.Partial("_SomePartial", new ViewDataDictionary { { "id", someInteger } }); *@
+
+@* Apeller une action de controller en passant des paramètres avec des boutons *@
+@Html.ActionLink("AutreBouton", "Details", "Database", null, new { @class="btn btn-primary" })
+
+@* @{
+    void RenderName(string name)
+    {
+        <p>Name: <strong>@name</strong></p>
+    }
+
+    RenderName("Mahatma Gandhi");
+    RenderName("Martin Luther King, Jr.");
+}
+
+@functions {
+    public string GetHello()
+    {
+        return "Hello";
+    }
+}
+<div>From method: @GetHello()</div>  *@
+
+@* @{
+    var inCSharp = true;
+    <p>Now in HTML, was in C# @inCSharp</p>
+} *@
+
+@* @for (var i = 0; i < people.Length; i++)
+{
+    var person = people[i];
+    <text>Name: @person.Name</text>
+} *@
+
+@* @for (var i = 0; i < people.Length; i++)
+{
+    var person = people[i];
+    @:Name: @person.Name
+} *@
+
+@* @using (Html.BeginForm())
+{
+    <div>
+        Email: <input type="email" id="Email" value="">
+        <button>Register</button>
+    </div>
+} *@
+
+@{
+    /* C# comment */
+    // Another C# comment
+}
+<!-- HTML comment -->
+
+@* @try
+{
+    throw new InvalidOperationException("You did something invalid.");
+}
+catch (Exception ex)
+{
+    <p>The exception message: @ex.Message</p>
+}
+finally
+{
+    <p>The finally statement.</p>
+} *@

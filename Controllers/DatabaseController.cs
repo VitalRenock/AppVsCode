@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,13 +21,13 @@ namespace AppVsCode.Controllers
         #region Index
 
         // GET: Movies
+        // public IActionResult Index()
         public async Task<IActionResult> Index()
         {
-            // Tester pour récupérer les tables de la DB
-            // DbTransaction MyTransit = _context.Database.ExecuteSqlRaw("MA REQUETE SQL");
-            // _context.Database.UseTransaction(MyTransit);
-
             return View(await _context.Posts.ToListAsync());
+
+            // Appelle l'action du controller.
+                // return RedirectToAction("Test");
         }
 
         #endregion
@@ -70,6 +71,9 @@ namespace AppVsCode.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(post.PostDate == DateTime.MinValue)
+                    post.PostDate = DateTime.Now;
+
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -179,31 +183,30 @@ namespace AppVsCode.Controllers
 
         public IActionResult Test()
         {
+
+                        
+            return View();
+        }
+
+        public void GetTablesOfDB()
+        {
+            // Code pour récupérer la liste des tables de la base de de données.
             var command = _context.Database.GetDbConnection().CreateCommand();
-            command.CommandText = "SELECT name from sqlite_master WHERE type='table'";
+            command.CommandText = "SELECT name from sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' OR '_%'";
             
             _context.Database.OpenConnection();
             using (var result = command.ExecuteReader()) 
             {
                 while (result.Read())
+                {
                     Console.WriteLine(result.GetString(0));
+                    Console.WriteLine(result.GetType());
+                }
             }
-            // var command = _context.Database.GetDbConnection().CreateCommand();
-            // command.CommandText = "SELECT name from sqlite_master WHERE type='table'";
-            // _context.Database.OpenConnection();
-            // using (var result = command.ExecuteReader()) 
-            // {
-            //     while (result.Read())
-            //         Console.WriteLine(result.GetString(0));
-            // }
 
-            
-            return View();
-        }
-
-        public string MaFonctionPartage()
-        {
-            return "Hello les gens!";
+            // Tester pour récupérer les tables de la DB
+            // DbTransaction MyTransit = _context.Database.ExecuteSqlRaw("MA REQUETE SQL");
+            // _context.Database.UseTransaction(MyTransit);
         }
 
         #endregion
